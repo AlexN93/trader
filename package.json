@@ -1,0 +1,20 @@
+{
+  "name": "trader",
+  "version": "1.0.0",
+  "description": "trader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "trader"
+  ],
+  "author": "Alex Nikolov",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "debug": "^3.1.0",
+    "request": "^2.83.0",
+    "system-sleep": "^1.3.6"
+  }
+}

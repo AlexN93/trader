@@ -1,0 +1,17 @@
+https://api.binance.com/api/v1
+
+
+
+
+kandlesticks
+
+bullish hammer -> daily low is long, daily high is short, kandle is small maybe
+bearish hammer -> inversed, long daily high, short daily low, kandle is small maybe
+
+bullish EC -> 	- current candle engulfed all of the price action of the prev day and closed high above all the price action of the prev day
+		- prev day is usually a small price range
+		- the more the upprice => more bullish
+
+MA50, MA100, MA200; MACD; Bollinger Bands; RSI;
+
+???Orderbook analysis???
