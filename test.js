@@ -16,12 +16,15 @@ async function init() {
             counter += 1;
             let candleStickData = await  exchange.getCandlestickData(market, ticker);
             let isECBullish = signals.isECBullish(candleStickData);
-            debug(counter, market, ticker, isECBullish);
-            if (isECBullish) {
+            let isECBearish = signals.isECBearish(candleStickData);
+            debug(counter, market, ticker, isECBullish, isECBearish);
+            if (isECBearish) {
                 results.push({
                     market: market,
                     ticker: ticker,
-                    isECBullish: isECBullish
+                    isECBullish: isECBullish,
+                    isECBearish: isECBearish,
+                    candleStickData: candleStickData
                 });
             }
             sleep(1000);
