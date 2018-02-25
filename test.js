@@ -15,19 +15,16 @@ async function init() {
 
             counter += 1;
             let candleStickData = await  exchange.getCandlestickData(market, ticker);
-            let isECBullish = signals.isECBullish(candleStickData);
-            let isECBearish = signals.isECBearish(candleStickData);
-            debug(counter, market, ticker, isECBullish, isECBearish);
-            if (isECBearish) {
+            let candleStickSignals = signals.getAllSignals(candleStickData);
+            // debug(counter, market, ticker, candleStickSignals);
+            if (candleStickSignals.isBullishEC || candleStickSignals.isHammer || candleStickSignals.isHM) {
                 results.push({
                     market: market,
                     ticker: ticker,
-                    isECBullish: isECBullish,
-                    isECBearish: isECBearish,
-                    candleStickData: candleStickData
+                    signals: candleStickSignals
                 });
             }
-            sleep(1000);
+            sleep(500);
 
         }
     }
@@ -36,5 +33,3 @@ async function init() {
 }
 
 init();
-
-// debug(markets['BTC'].filter((o) => { return o === 'NANO'; }));
